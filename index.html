@@ -116,9 +116,9 @@
     .details li:last-child { border-bottom: 1px solid var(--line); }
 
     .about { padding: 1rem 0 5rem; }
-    .about h2 {
+    .about h2, .skills h2, .projects h2 {
       font-family: "Newsreader", Georgia, serif;
-      font-weight: 500; font-size: 1.5rem; margin: 0 0 1rem;
+      font-weight: 500; font-size: 1.5rem; margin: 0 0 1.25rem;
     }
     .about p {
       font-family: "Newsreader", Georgia, serif;
@@ -130,20 +130,16 @@
       border-left: 4px solid var(--scarlet);
     }
 
-    .skills { padding: 0 0 6rem; }
-    .skills h2 {
-      font-family: "Newsreader", Georgia, serif;
-      font-weight: 500; font-size: 1.5rem; margin: 0 0 1.25rem;
-    }
-    .skill-group {
+    .skills { padding: 0 0 5rem; }
+    .skill-group, .project {
       display: grid;
       grid-template-columns: 13rem minmax(0, 1fr);
       gap: 1rem 2rem;
       padding: 1.25rem 0;
       border-top: 1px solid var(--line);
     }
-    .skill-group:last-child { border-bottom: 1px solid var(--line); }
-    .skill-group h3 {
+    .skill-group:last-child, .project:last-child { border-bottom: 1px solid var(--line); }
+    .skill-group h3, .project h3 {
       font-family: "Newsreader", Georgia, serif;
       font-weight: 600; font-size: 1.2rem; margin: 0;
     }
@@ -158,13 +154,20 @@
       font-size: 1rem;
     }
 
+    .projects { padding: 0 0 6rem; }
+    .project p { margin: 0 0 .75rem; max-width: 40rem; }
+    .project a {
+      color: var(--scarlet); font-weight: 500;
+      text-underline-offset: .2em;
+    }
+
     footer { border-top: 1px solid var(--line); color: var(--muted); font-size: .9375rem; }
     footer .wrap { padding-top: 1.5rem; padding-bottom: 1.5rem; }
 
     @media (max-width: 760px) {
       .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 0 2.5rem; }
       .headshot { max-width: 18rem; }
-      .skill-group { grid-template-columns: 1fr; gap: .75rem; }
+      .skill-group, .project { grid-template-columns: 1fr; gap: .75rem; }
     }
   </style>
 </head>
@@ -177,6 +180,7 @@
       <nav aria-label="Main">
         <a href="index.html" aria-current="page">About</a>
         <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
       </nav>
     </div>
   </header>
@@ -252,6 +256,34 @@
           <li>Certified Bartender</li>
         </ul>
       </div>
+    </section>
+
+    <section class="projects" id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+
+      <article class="project">
+        <h3>Project One Title</h3>
+        <div>
+          <p>Two or three sentences describing the project, what you did, and the result.</p>
+          <a href="projects/project1.pdf" target="_blank" rel="noopener">Read the PDF</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <h3>Project Two Title</h3>
+        <div>
+          <p>Two or three sentences describing the project, what you did, and the result.</p>
+          <a href="projects/project2.pdf" target="_blank" rel="noopener">Read the PDF</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <h3>Project Three Title</h3>
+        <div>
+          <p>Two or three sentences describing the project, what you did, and the result.</p>
+          <a href="projects/project3.pdf" target="_blank" rel="noopener">Read the PDF</a>
+        </div>
+      </article>
     </section>
   </main>
 
