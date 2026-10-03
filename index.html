@@ -29,7 +29,7 @@
     }
 
     * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
     body {
       margin: 0;
       background: var(--paper);
@@ -89,7 +89,7 @@
     .headshot img {
       width: 100%; height: 100%; object-fit: cover; display: block;
     }
-    /* Shown only if images/headshot.jpg is missing */
+    /* Shown only if headshot.png is missing */
     .headshot .placeholder {
       position: absolute; inset: 0;
       display: none; align-items: center; justify-content: center;
@@ -114,9 +114,8 @@
       font-size: 1.125rem;
     }
     .details li:last-child { border-bottom: 1px solid var(--line); }
-    .details span { color: var(--muted); display: block; font-size: .9375rem; }
 
-    .about { padding: 1rem 0 6rem; }
+    .about { padding: 1rem 0 5rem; }
     .about h2 {
       font-family: "Newsreader", Georgia, serif;
       font-weight: 500; font-size: 1.5rem; margin: 0 0 1rem;
@@ -131,12 +130,41 @@
       border-left: 4px solid var(--scarlet);
     }
 
+    .skills { padding: 0 0 6rem; }
+    .skills h2 {
+      font-family: "Newsreader", Georgia, serif;
+      font-weight: 500; font-size: 1.5rem; margin: 0 0 1.25rem;
+    }
+    .skill-group {
+      display: grid;
+      grid-template-columns: 13rem minmax(0, 1fr);
+      gap: 1rem 2rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--line);
+    }
+    .skill-group:last-child { border-bottom: 1px solid var(--line); }
+    .skill-group h3 {
+      font-family: "Newsreader", Georgia, serif;
+      font-weight: 600; font-size: 1.2rem; margin: 0;
+    }
+    .skill-group ul {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-wrap: wrap; gap: .5rem;
+    }
+    .skill-group li {
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--scarlet);
+      padding: .25rem .75rem;
+      font-size: 1rem;
+    }
+
     footer { border-top: 1px solid var(--line); color: var(--muted); font-size: .9375rem; }
     footer .wrap { padding-top: 1.5rem; padding-bottom: 1.5rem; }
 
     @media (max-width: 760px) {
       .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 0 2.5rem; }
       .headshot { max-width: 18rem; }
+      .skill-group { grid-template-columns: 1fr; gap: .75rem; }
     }
   </style>
 </head>
@@ -148,13 +176,13 @@
       <a class="brand" href="index.html">Aanay Parikh</a>
       <nav aria-label="Main">
         <a href="index.html" aria-current="page">About</a>
+        <a href="#skills">Skills</a>
       </nav>
     </div>
   </header>
 
   <main id="main" class="wrap">
     <section class="hero" aria-label="Introduction">
-      <!-- Add your photo at images/headshot.jpg in your repository -->
       <figure class="headshot" id="headshot">
         <img src="headshot.png" alt="Headshot of Aanay Parikh"
              onerror="document.getElementById('headshot').classList.add('missing')">
@@ -174,6 +202,56 @@
     <section class="about" aria-labelledby="about-heading">
       <h2 id="about-heading">About me</h2>
       <p>I'm a Business Analytics and IT student at Rutgers Business School who combines high-stakes communication, from briefing a State Senator's office to consulting for Fortune 500 clients at CGI, with an entrepreneur's ownership of the details, having built an $18k tennis coaching business by personally managing pricing, scheduling, and client retention.</p>
+    </section>
+
+    <section class="skills" id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+
+      <div class="skill-group">
+        <h3>Analysis and communication</h3>
+        <ul>
+          <li>Financial Research</li>
+          <li>Business Writing &amp; Analysis</li>
+          <li>Client Development Plans</li>
+          <li>Public Speaking &amp; Presentations</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3>Programming</h3>
+        <ul>
+          <li>Java</li>
+          <li>Python</li>
+          <li>HTML</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3>Software</h3>
+        <ul>
+          <li>Microsoft Excel</li>
+          <li>Microsoft PowerPoint</li>
+          <li>Microsoft Word</li>
+          <li>Google Workspace</li>
+          <li>Canva</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <ul>
+          <li>English (fluent)</li>
+          <li>Gujarati (fluent)</li>
+          <li>German (fluent)</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3>Certifications</h3>
+        <ul>
+          <li>Certified Bartender</li>
+        </ul>
+      </div>
     </section>
   </main>
 
